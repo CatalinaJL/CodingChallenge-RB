@@ -1,16 +1,18 @@
 .App {
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw;
+  height: 100vh; */
   display: flex;
   flex-direction: column;
   text-align: center;
 }
+
 .App-main-container{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  height: 85vh;
-  width: 100vw;
+  /* height: 100vh;
+  width: 100vw; */
+  padding: 20px;
 }
 
 .sidebar{
@@ -19,19 +21,22 @@
 }
 
 .itemsList{
-  width: 80%;
+  width: 90%;
   height: 100%;
-  background-color: aqua;
+  border: 1px solid #a6a6a6;
   display: flex;
   flex-direction: column;
+  padding: 15px;
+  
 
 }
 
 .headerBox{
-  width: 100%;
+  width: 95%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  padding: 10px;
 }
 
 .containerItem{
@@ -41,6 +46,27 @@
   align-items: center;
 }
 
+.containerCheckBox{
+  display: flex;
+  padding-left: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 30px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.containerCheckBox input [type="radio"]{
+  width: 50%;
+  height: 50%;
+  color:teal;
+}
+input[type="radio"]:checked {
+  /* box-shadow: 0 0 0 3px orange; */
+  color:teal;
+}
 .card{
   display: flex;
   flex-direction: row;
@@ -50,4 +76,11 @@
 
 .card img{
   width: 25%;
+}
+
+.bottom{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
 }

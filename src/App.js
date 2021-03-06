@@ -1,7 +1,8 @@
 import React from 'react';
-import {Title} from './Components/title';
+import {Title} from './Components/Title';
 import {Sidebar} from './Components/Sidebar';
 import {ItemsList} from './Components/Items-List';
+import {Bottom} from './Components/Bottom';
 import './App.css';
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
         <ItemsList/>
       </main>
       <section>
-
+        <Bottom/>
       </section>
     </div>
   );

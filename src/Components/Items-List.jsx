@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import { Radio } from '@material-ui/core';
 import triangle from '../Assets/Triangle.jpg';
 import {DateHour} from './DateHour';
 
@@ -12,11 +11,6 @@ export const ItemsList = () =>{
     const HandleChange= () =>{
         console.log('estan seleccionando');
         setDisplayDateHour(true);
-        // if (displayDateHour(false)) {
-        // setDisplayDateHour(true);
-        // } else{
-        //     setDisplayDateHour(false)
-        // }
     } ; 
 
     return(
@@ -29,7 +23,9 @@ export const ItemsList = () =>{
                 {dataCard.map((data, index)=>{
                     return(
                     <div className="containerItem" key={index}>
-                        <Radio name="topic" onChange={HandleChange}></Radio>
+                        <div className="containerCheckBox">
+                            <input type="radio" name="radio" onChange={HandleChange} value={data}/>
+                        </div>
                         <div className="card">
                             <div className="card-text">
                                 <h4>{data}</h4>
@@ -38,7 +34,6 @@ export const ItemsList = () =>{
                             <div className="card-img">
                                 <img src={triangle} alt=""/>
                             </div>
-                           
                         </div>
                         <div>
                                 {displayDateHour && <DateHour/>}
@@ -46,8 +41,28 @@ export const ItemsList = () =>{
                         </div>
                     </div>)
                 })}
-           
-            
+           <div className="headerBox">
+                    <h4>Validation</h4>
+                    <p>Select all in validation</p>        
+            </div>
+            <div className="containerItem" >
+                        <div className="containerCheckBox">
+                            <input type="radio" name="radio" onChange={HandleChange}/>
+                        </div>
+                        <div className="card">
+                            <div className="card-text">
+                                <h4>Ecosystem</h4>
+                                <p>view Builder</p>
+                            </div>
+                            <div className="card-img">
+                                <img src={triangle} alt=""/>
+                            </div>
+                        </div>
+                        <div>
+                                {displayDateHour && <DateHour/>}
+                                {!displayDateHour && null}
+                        </div>
+                    </div>
           
 
         
