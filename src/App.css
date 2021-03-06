@@ -23,14 +23,21 @@
   height: 100%;
   background-color: aqua;
   display: flex;
+  flex-direction: column;
 
 }
 
-.containerItem{
-  height: 25%;
-  border: 1px solid black;
+.headerBox{
+  width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.containerItem{
+  height: 20%;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
