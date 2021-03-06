@@ -1,24 +1,18 @@
 import React, {useState} from 'react';
 import { Radio } from '@material-ui/core';
 import triangle from '../Assets/Triangle.jpg';
+import {DateHour} from './DateHour';
 
-
-const DateHour = () =>{
-    const [showDateHour, setShowDateHour] = useState(false)
-    return(
-       <div>
-           <input type="date" name="" id=""/>
-           <input type="time" name="" id=""/>
-       </div>
-    )
-};
-
-const HandleChange= () =>{
-    console.log('estan seleccionando')
-} ;
 
 
 export const ItemsList = () =>{
+    const [displayDateHour, setDisplayDateHour]= useState(false);
+
+    const HandleChange= () =>{
+        console.log('estan seleccionando');
+        setDisplayDateHour(true);
+    } ; 
+       
     return(
         <div className="itemsList">
             <div className="containerItem">
@@ -32,7 +26,8 @@ export const ItemsList = () =>{
                         <img src={triangle} alt=""/>
                     </div>
                     <div>
-                        <DateHour/>
+                        {displayDateHour && <DateHour/>}
+                        {!displayDateHour && null}
                     </div>
                 </div>
             </div>

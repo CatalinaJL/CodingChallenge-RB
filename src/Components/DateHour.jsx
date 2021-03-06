@@ -1,8 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 
 export const DateHour = () =>{
-    const [showDateHour, setShowDateHour] = useState(false)
     return(
        <div>
            <input type="date" name="" id=""/>
