@@ -4,30 +4,28 @@ import triangle from '../Assets/Triangle.jpg';
 import {DateHour} from './DateHour';
 
 
-const dataCard=['Problem', 'Solution', 'Team']
+const dataCard=['Problem', 'Solution', 'Team', 'Ecosystem'];
 
 export const ItemsList = () =>{
     const [displayDateHour, setDisplayDateHour]= useState(false);
+    const [items, setItems] = useState(dataCard);
+
+    const handleOnDragEnd = (result) =>{
+        console.log(result);
+        const list = Array.from(items);
+        const [reorderdList] = list.splice(result.source.index, 1);
+        list.splice(result.destination.index, 0, reorderdList);
+        setItems(list)
+    };
 
     const HandleChange= (e) =>{
         const buttonValue= e.target.value;
         console.log(buttonValue);
         setDisplayDateHour(true)
-        
-        // if(buttonValue === dataCard[0]){
-        //     return  setDisplayDateHour(true);
-        // } if (buttonValue === dataCard[1]){
-        //     return setDisplayDateHour(true)
-        // } if(buttonValue === dataCard[2]){
-        //     return setDisplayDateHour(true)
-        // }else{
-        //     return displayDateHour
-        // }
-        
     } ; 
 
     return(
-        <DragDropContext>
+        <DragDropContext onDragEnd={handleOnDragEnd}>
             <Droppable droppableId="items">
                 {(provided) =>(
                      <div className="itemsList"{...provided.droppableProps} ref={provided.innerRef}>
@@ -36,11 +34,11 @@ export const ItemsList = () =>{
                             <span>Select all in ideation</span>
                             <p>Due Date (optional)</p>
                         </div>
-                        {dataCard.map((data, index)=>{
+                        {items.map((data, index)=>{
                             return(
                             <Draggable key={index} draggableId={data} index={index}>
                                 {(provided) =>(
-                                        <div className="containerItem" ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                                    <div className="containerItem" ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
                                         <div className="containerCheckBox">
                                             <input type="radio" name="radio" onChange={HandleChange} value={data}/>
                                         </div>
@@ -55,41 +53,20 @@ export const ItemsList = () =>{
                                             </div>
                                         </div>
                                         <div>
-                                                {displayDateHour && <DateHour/>}
-                                                {!displayDateHour && null}
+                                            {displayDateHour && <DateHour/>}
+                                            {!displayDateHour && null}
                                         </div>
-                                        {provided.placeholder}
                                     </div>
                               )}
-                         
+
                          </Draggable>
                          )
                      })}
-             <div className="headerBox">
-                         <h4>Validation</h4>
-                         <p>Select all in validation</p>        
-                 </div>
-                 <div className="containerItem" >
-                             <div className="containerCheckBox">
-                                 <input type="radio" name="radio" onChange={HandleChange}/>
-                             </div>
-                             <div className="card">
-                                 <div className="card-text">
-                                     <h4>Ecosystem</h4>
-                                     <p>view Builder</p>
-                                 </div>
-                                 <div className="card-img">
-                                     <img src={triangle} alt=""/>
-                                 </div>
-                             </div>
-                             <div>
-                                     {displayDateHour && <DateHour/>}
-                                     {!displayDateHour && null}
-                             </div>
-                         </div>
-                         {provided.placeholder}
+                {provided.placeholder}
              </div>
                 )}
+                
+                
                            
         </Droppable>
     </DragDropContext>
