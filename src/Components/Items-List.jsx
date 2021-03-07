@@ -45,7 +45,7 @@ export const ItemsList = () =>{
                                         <div className="card">
                                             <div className="card-text">
                                                 <h4>{data}</h4>
-                                                
+
                                                 <p>view Builder</p>
                                             </div>
                                             <div className="card-img">

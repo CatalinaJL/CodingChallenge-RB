@@ -44,6 +44,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 10px;
 }
 
 .containerCheckBox{
@@ -72,6 +73,7 @@ input[type="radio"]:checked {
   flex-direction: row;
   justify-content: space-between;
   border: 1px solid whitesmoke;
+  box-shadow: 5px 10px #d6d6d6;
 }
 
 .card img{
