@@ -7,6 +7,18 @@ import {DateHour} from './DateHour';
 const dataCard=['Problem', 'Solution', 'Team', 'Ecosystem'];
 
 export const ItemsList = () =>{
+    const [appState, setChange] =useState({
+        activeObject:null,
+        data:[
+            {id:1, 
+            title:'Problem'},
+            {id:2, 
+            title:'Solution'}, 
+            {id:3, 
+            title:'Team'},
+            {id:4, 
+            title:'Ecosystem'} ]
+    })
     const [displayDateHour, setDisplayDateHour]= useState(false);
     const [items, setItems] = useState(dataCard);
 
@@ -18,6 +30,17 @@ export const ItemsList = () =>{
         setItems(list)
     };
 
+    const toggleActive =(index) =>{
+        setChange({...appState, activeObject:appState.data[index]})
+    };
+
+    const toggleActiveStyles=(index) =>{
+        if(appState.data[index] === appState.activeObject){
+            return "card active";
+        }else{
+            return "card inactive"
+        }
+    }
     const HandleChange= (e) =>{
         const buttonValue= e.target.value;
         console.log(buttonValue);
@@ -34,18 +57,17 @@ export const ItemsList = () =>{
                             <span>Select all in ideation</span>
                             <p>Due Date (optional)</p>
                         </div>
-                        {items.map((data, index)=>{
+                        {appState.data.map((data, index)=>{
                             return(
-                            <Draggable key={index} draggableId={data} index={index}>
+                            <Draggable key={data.id} draggableId={data.title} index={index}>
                                 {(provided) =>(
                                     <div className="containerItem" ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
                                         <div className="containerCheckBox">
-                                            <input type="radio" name="radio" onChange={HandleChange} value={data}/>
+                                            <input type="radio" name="radio" onChange={()=>{toggleActive(index)}} value={data.title}/>
                                         </div>
-                                        <div className="card">
+                                        <div className={toggleActiveStyles(index)}>
                                             <div className="card-text">
-                                                <h4>{data}</h4>
-
+                                                <h4>{data.title}</h4>
                                                 <p>view Builder</p>
                                             </div>
                                             <div className="card-img">
