@@ -1,0 +1,84 @@
+/* Sidebar.jsx */
+
+.sidebar{
+    width: 20%;
+    height: 100%;
+  }
+
+/* Items-List.jsx */
+
+.itemsList{
+    width: 90%;
+    height: 100%;
+    border: 1px solid #a6a6a6;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+  
+}
+  
+.headerBox{
+    width: 95%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+.containerItem{
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+
+.containerCheckBox{
+    display: flex;
+    padding-left: 10px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 30px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid whitesmoke;
+    box-shadow: 5px 10px #d6d6d6;
+}
+  
+.inactive{
+    border: 2px solid whitesmoke;
+}
+  
+.active{
+    border: 2px solid teal;
+}
+
+.card img{
+    width: 25%;
+}
+
+/* SocialInnov.jsx */
+.headerBox-Social{
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Bottom.jsx */
+
+.bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }

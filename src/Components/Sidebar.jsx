@@ -1,5 +1,6 @@
 import React from 'react';
 import {List, ListItem, ListItemText } from '@material-ui/core';
+import './Components.css';
 
 export const Sidebar = () =>{
     return(
