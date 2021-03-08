@@ -4,7 +4,7 @@ import triangle from '../Assets/Triangle.jpg';
 import {DateHour} from './DateHour';
 
 
-const dataCard=['Problem', 'Solution', 'Team', 'Ecosystem'];
+// const dataCard=['Problem', 'Solution', 'Team', 'Ecosystem'];
 
 export const ItemsList = () =>{
     const [appState, setChange] =useState({
@@ -20,7 +20,7 @@ export const ItemsList = () =>{
             title:'Ecosystem'} ]
     })
     const [displayDateHour, setDisplayDateHour]= useState(false);
-    const [items, setItems] = useState(dataCard);
+    const [items, setItems] = useState(appState.data);
 
     const handleOnDragEnd = (result) =>{
         console.log(result);
@@ -31,7 +31,8 @@ export const ItemsList = () =>{
     };
 
     const toggleActive =(index) =>{
-        setChange({...appState, activeObject:appState.data[index]})
+        setChange({...appState, activeObject:appState.data[index]});
+        setDisplayDateHour(true)
     };
 
     const toggleActiveStyles=(index) =>{
@@ -41,11 +42,13 @@ export const ItemsList = () =>{
             return "card inactive"
         }
     }
-    const HandleChange= (e) =>{
-        const buttonValue= e.target.value;
-        console.log(buttonValue);
-        setDisplayDateHour(true)
-    } ; 
+  
+    // const HandleChange= (index) =>{
+    //     toggleActive(index)
+    //     // const buttonValue= e.target.value;
+    //     // console.log(buttonValue);
+    //     // setDisplayDateHour(true)
+    // } ; 
 
     return(
         <DragDropContext onDragEnd={handleOnDragEnd}>
