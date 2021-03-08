@@ -10,7 +10,7 @@
     color: black;
 }
 
-/* Items-List.jsx */
+/* Items-List.jsx and SocialInnovation.jsx */
 
 .itemsList{
     width: 90%;
@@ -25,7 +25,7 @@
 .headerBox{
     width: 95%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding: 10px;
 }
@@ -51,10 +51,11 @@
 }
 
 .card{
+    width: 300px;
+    height: 100px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border: 1px solid whitesmoke;
     box-shadow: 5px 10px #d6d6d6;
 }
   
@@ -66,18 +67,35 @@
     border: 2px solid teal;
 }
 
-.card img{
-    width: 25%;
+.card-img{
+    width: 150px;
+    height: 85px;
+    margin:7px;
+    display: flex;
+    flex-direction: row;
+    background-color: #d6d6d6;
 }
 
-/* SocialInnov.jsx */
-.headerBox-Social{
-    width: 95%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
+.BigTriangle{
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 50px solid red;
+    margin: 12px;
 }
+
+
+.SmallTriangle{
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 25px solid red;
+    margin: 12px;
+}
+
+
 
 /* Bottom.jsx */
 

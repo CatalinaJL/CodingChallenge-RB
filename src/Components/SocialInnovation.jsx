@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {DragDropContext, Droppable, Draggable} from 'react-beautiful-dnd';
-import triangle from '../Assets/Triangle.jpg';
+// import triangle from '../Assets/Triangle.jpg';
 import {DateHour} from './DateHour';
 import './Components.css';
 
@@ -41,7 +41,7 @@ export const SocialInnovation = () =>{
             <Droppable droppableId="items">
                 {(provided) =>(
                      <div className="itemsList"{...provided.droppableProps} ref={provided.innerRef}>
-                        <div className="headerBox-Social">
+                        <div className="headerBox">
                             <h4>Social Innovation</h4>
                             <p>Due Date (optional)</p>
                         </div>
@@ -59,7 +59,9 @@ export const SocialInnovation = () =>{
                                                 <p>view Builder</p>
                                             </div>
                                             <div className="card-img">
-                                                <img src={triangle} alt=""/>
+                                                {/* <img src={triangle} alt=""/> */}
+                                                <div className="BigTriangle"></div>
+                                                <div className="SmallTriangle inactive"></div>
                                             </div>
                                         </div>
                                         <div>
