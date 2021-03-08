@@ -9,23 +9,17 @@ import {DateHour} from './DateHour';
 export const ItemsList = () =>{
     const [appState, setChange] =useState({
         activeObject:null,
-        data:[
-            {id:1, 
-            title:'Problem'},
-            {id:2, 
-            title:'Solution'}, 
-            {id:3, 
-            title:'Team'},
-            {id:4, 
-            title:'Ecosystem'} ]
+        data:['Problem', 'Solution', 'Team', 'Ecosystem']
     })
     const [displayDateHour, setDisplayDateHour]= useState(false);
     const [items, setItems] = useState(appState.data);
-
+    console.log(items)
+        
     const handleOnDragEnd = (result) =>{
         console.log(result);
-        const list = Array.from(items);
+        const list = items;
         const [reorderdList] = list.splice(result.source.index, 1);
+        console.log(reorderdList)
         list.splice(result.destination.index, 0, reorderdList);
         setItems(list)
     };
@@ -62,15 +56,15 @@ export const ItemsList = () =>{
                         </div>
                         {appState.data.map((data, index)=>{
                             return(
-                            <Draggable key={data.id} draggableId={data.title} index={index}>
+                            <Draggable key={index} draggableId={data} index={index}>
                                 {(provided) =>(
                                     <div className="containerItem" ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
                                         <div className="containerCheckBox">
-                                            <input type="radio" name="radio" onChange={()=>{toggleActive(index)}} value={data.title}/>
+                                            <input type="radio" name="radio" onChange={()=>{toggleActive(index)}} value={data}/>
                                         </div>
                                         <div className={toggleActiveStyles(index)}>
                                             <div className="card-text">
-                                                <h4>{data.title}</h4>
+                                                <h4>{data}</h4>
                                                 <p>view Builder</p>
                                             </div>
                                             <div className="card-img">
