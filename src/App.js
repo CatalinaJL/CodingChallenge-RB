@@ -11,7 +11,7 @@ function App() {
     <Router>
       <Switch>
       <Route path="/" exact component={DashboardAll}/>
-      <Route path="/" exact component={DashboardSocial}/>
+      <Route path="/SocialInnovation" exact component={DashboardSocial}/>
       </Switch>
     </Router>    
   );

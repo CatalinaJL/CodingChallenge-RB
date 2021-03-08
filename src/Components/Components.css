@@ -3,7 +3,12 @@
 .sidebar{
     width: 20%;
     height: 100%;
-  }
+}
+
+.buttonSidebar{
+    text-decoration: none;
+    color: black;
+}
 
 /* Items-List.jsx */
 
