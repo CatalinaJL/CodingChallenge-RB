@@ -1,21 +1,19 @@
 import React from 'react';
-import {Title} from './Components/title';
-import {Sidebar} from './Components/Sidebar';
-import {ItemsList} from './Components/Items-List';
-import './App.css';
+import {Route, 
+  BrowserRouter as Router,
+  Switch} from 'react-router-dom';
+import {DashboardAll} from './Pages/DashboardAll';
+import {DashboardSocial} from './Pages/DashboardSocial';
+
 
 function App() {
   return (
-    <div className="App">
-        <Title/>
-      <main className="App-main-container">
-        <Sidebar/>
-        <ItemsList/>
-      </main>
-      <section>
-
-      </section>
-    </div>
+    <Router>
+      <Switch>
+      <Route path="/" exact component={DashboardAll}/>
+      <Route path="/SocialInnovation" exact component={DashboardSocial}/>
+      </Switch>
+    </Router>    
   );
 }
 

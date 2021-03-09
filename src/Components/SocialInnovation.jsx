@@ -1,15 +1,13 @@
 import React, {useState} from 'react';
 import {DragDropContext, Droppable, Draggable} from 'react-beautiful-dnd';
+// import triangle from '../Assets/Triangle.jpg';
 import {DateHour} from './DateHour';
-import './Components.css'
+import './Components.css';
 
-
-
-
-export const ItemsList = () =>{
+export const SocialInnovation = () =>{
     const [appState, setChange] =useState({
         activeObject:null,
-        data:['Problem', 'Solution', 'Team', 'Ecosystem']
+        data:['Problem', 'Solution', 'Ecosystem', 'Team', 'Results']
     })
     const [displayDateHour, setDisplayDateHour]= useState(false);
     const [items, setItems] = useState(appState.data);
@@ -34,14 +32,14 @@ export const ItemsList = () =>{
         }
     };
 
+
     return(
         <DragDropContext onDragEnd={handleOnDragEnd}>
             <Droppable droppableId="items">
                 {(provided) =>(
                      <div className="itemsList"{...provided.droppableProps} ref={provided.innerRef}>
                         <div className="headerBox">
-                            <h4>Ideation</h4>
-                            <span className="AllSelector">Select all in ideation</span>
+                            <h4>Social Innovation</h4>
                             <p>Due Date (optional)</p>
                         </div>
                         {appState.data.map((data, index)=>{
@@ -74,13 +72,10 @@ export const ItemsList = () =>{
                      })}
                 {provided.placeholder}
              </div>
-                )}
-                
-                
-                           
+                )}            
         </Droppable>
     </DragDropContext>
       
     )
-}
 
+}

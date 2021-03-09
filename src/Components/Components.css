@@ -1,0 +1,127 @@
+/* Sidebar.jsx */
+
+.sidebar{
+    width: 20%;
+    height: 100%;
+}
+
+.buttonSidebar{
+    text-decoration: none;
+    color: black;
+}
+
+/* Items-List.jsx and SocialInnovation.jsx */
+
+.itemsList{
+    width: 90%;
+    height: 100%;
+    border: 1px solid #a6a6a6;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+  
+}
+  
+.headerBox{
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.AllSelector{
+    font-size: 14px;
+    color: teal;
+}
+
+.headerBox p{
+    font-size: 15px;
+}
+
+.containerItem{
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+
+.containerCheckBox{
+    display: flex;
+    padding-left: 10px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 30px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.card{
+    width: 300px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 5px 10px #d6d6d6;
+}
+  
+.inactive{
+    border: 2px solid whitesmoke;
+}
+  
+.active{
+    border: 2px solid teal;
+}
+
+.card-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 10px;
+}
+
+.card-text p{
+    font-size: 12px;
+}
+.card-img{
+    width: 150px;
+    height: 85px;
+    margin:7px;
+    display: flex;
+    flex-direction: row;
+    background-color: #d6d6d6;
+}
+
+.BigTriangle{
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 50px solid red;
+    margin: 12px;
+}
+
+
+.SmallTriangle{
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 25px solid red;
+    margin: 12px;
+}
+
+
+
+/* Bottom.jsx */
+
+.bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
