@@ -30,6 +30,15 @@
     padding: 10px;
 }
 
+.AllSelector{
+    font-size: 14px;
+    color: teal;
+}
+
+.headerBox p{
+    font-size: 15px;
+}
+
 .containerItem{
     height: 20%;
     display: flex;
@@ -67,6 +76,17 @@
     border: 2px solid teal;
 }
 
+.card-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 10px;
+}
+
+.card-text p{
+    font-size: 12px;
+}
 .card-img{
     width: 150px;
     height: 85px;

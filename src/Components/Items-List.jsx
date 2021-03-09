@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import {DragDropContext, Droppable, Draggable} from 'react-beautiful-dnd';
-import triangle from '../Assets/Triangle.jpg';
 import {DateHour} from './DateHour';
+import './Components.css'
 
 
-// const dataCard=['Problem', 'Solution', 'Team', 'Ecosystem'];
+
 
 export const ItemsList = () =>{
     const [appState, setChange] =useState({
@@ -13,13 +13,10 @@ export const ItemsList = () =>{
     })
     const [displayDateHour, setDisplayDateHour]= useState(false);
     const [items, setItems] = useState(appState.data);
-    console.log(items)
         
     const handleOnDragEnd = (result) =>{
-        console.log(result);
         const list = items;
         const [reorderdList] = list.splice(result.source.index, 1);
-        console.log(reorderdList)
         list.splice(result.destination.index, 0, reorderdList);
         setItems(list)
     };
@@ -35,14 +32,7 @@ export const ItemsList = () =>{
         }else{
             return "card inactive"
         }
-    }
-  
-    // const HandleChange= (index) =>{
-    //     toggleActive(index)
-    //     // const buttonValue= e.target.value;
-    //     // console.log(buttonValue);
-    //     // setDisplayDateHour(true)
-    // } ; 
+    };
 
     return(
         <DragDropContext onDragEnd={handleOnDragEnd}>
@@ -51,7 +41,7 @@ export const ItemsList = () =>{
                      <div className="itemsList"{...provided.droppableProps} ref={provided.innerRef}>
                         <div className="headerBox">
                             <h4>Ideation</h4>
-                            <span>Select all in ideation</span>
+                            <span className="AllSelector">Select all in ideation</span>
                             <p>Due Date (optional)</p>
                         </div>
                         {appState.data.map((data, index)=>{
@@ -59,16 +49,17 @@ export const ItemsList = () =>{
                             <Draggable key={index} draggableId={data} index={index}>
                                 {(provided) =>(
                                     <div className="containerItem" ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                                        <div className="containerCheckBox">
-                                            <input type="radio" name="radio" onChange={()=>{toggleActive(index)}} value={data}/>
-                                        </div>
+                                        <form name="topic" className="containerCheckBox">
+                                            <input type="checkbox" name="radio" onChange={()=>{toggleActive(index)}} value={data}/>
+                                        </form>
                                         <div className={toggleActiveStyles(index)}>
                                             <div className="card-text">
                                                 <h4>{data}</h4>
                                                 <p>view Builder</p>
                                             </div>
                                             <div className="card-img">
-                                                <img src={triangle} alt=""/>
+                                                <div className="BigTriangle"></div>
+                                                <div className="SmallTriangle inactive"></div>
                                             </div>
                                         </div>
                                         <div>

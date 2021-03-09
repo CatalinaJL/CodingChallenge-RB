@@ -11,13 +11,10 @@ export const SocialInnovation = () =>{
     })
     const [displayDateHour, setDisplayDateHour]= useState(false);
     const [items, setItems] = useState(appState.data);
-    console.log(items)
         
     const handleOnDragEnd = (result) =>{
-        console.log(result);
         const list = items;
         const [reorderdList] = list.splice(result.source.index, 1);
-        console.log(reorderdList)
         list.splice(result.destination.index, 0, reorderdList);
         setItems(list)
     };
@@ -50,16 +47,15 @@ export const SocialInnovation = () =>{
                             <Draggable key={index} draggableId={data} index={index}>
                                 {(provided) =>(
                                     <div className="containerItem" ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                                        <div className="containerCheckBox">
-                                            <input type="radio" name="radio" onChange={()=>{toggleActive(index)}} value={data}/>
-                                        </div>
+                                        <form name="topic" className="containerCheckBox">
+                                            <input type="checkbox" name="radio" onChange={()=>{toggleActive(index)}} value={data}/>
+                                        </form>
                                         <div className={toggleActiveStyles(index)}>
                                             <div className="card-text">
                                                 <h4>{data}</h4>
                                                 <p>view Builder</p>
                                             </div>
                                             <div className="card-img">
-                                                {/* <img src={triangle} alt=""/> */}
                                                 <div className="BigTriangle"></div>
                                                 <div className="SmallTriangle inactive"></div>
                                             </div>
